@@ -1,6 +1,6 @@
 
 MODULE NEURALNET_MOD
-! Hompack real precision module for approximately 64 bit arithmetic on all
+! Hompack real precision module for approximately 64-bit arithmetic on all
 ! known machines.
 USE REAL_PRECISION
 ! Default to private, but make LAYER and NEURALNET objects public.
