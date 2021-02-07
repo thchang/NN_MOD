@@ -3,9 +3,8 @@ MODULE NEURALNET_MOD
 ! Hompack real precision module for approximately 64-bit arithmetic on all
 ! known machines.
 USE REAL_PRECISION
-! Default to private, but make LAYER and NEURALNET objects public.
-PRIVATE
-PUBLIC :: LAYER, NEURALNET
+! Default to public.
+PUBLIC
 
 ! Derived data type for constructing a single layer of a neural network.
 TYPE LAYER
@@ -410,7 +409,7 @@ SUBROUTINE TRAIN(THIS, DATA, IERR, LOSS, REG, LAMBDA)
    ! Randomly initialize weights in [-1, 1].
    CALL RANDOM_NUMBER(CURR_X(:))
    CURR_X(:) = 2.0_R8 * (CURR_X(:) - 0.5_R8)
-CURR_X(NUMWEIGHTS+1:NUMWEIGHTS+NUMBIAS) = 0.0_R8
+   CURR_X(NUMWEIGHTS+1:NUMWEIGHTS+NUMBIAS) = 0.0_R8
    ! Solve with stochastic gradient descent.
    CALL SGD(NUMWEIGHTS+NUMBIAS, BACKPROP_GRAD, CURR_X, &
           & IBUDGET=10000, TAU=1.0_R8)
