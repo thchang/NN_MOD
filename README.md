@@ -8,9 +8,9 @@ regressors, this library is currently in working order.
 
 To take this code to the next level, the following modifications are needed.
  - Support for other optimizers: I have provided several possible optimization
-   subroutines in `OPT\_MOD` but have not added the code to support changing
+   subroutines in `OPT_MOD` but have not added the code to support changing
    SGD for any of the other options.
- - Add L-BFGS to the list in `OPT\_MOD`.
+ - Add L-BFGS to the list in `OPT_MOD`.
  - Add support for training and evaluating with dropout (in the form of a
    dropout layer).
  - Add a transformer layer.
@@ -29,12 +29,12 @@ To take this code to the next level, the following modifications are needed.
 ## Contents
 
 The `src` subdirectory contains the following source files:
- - `neuralnet.f90` contains the `NEURALNET\_MOD` module, which defines the
+ - `neuralnet.f90` contains the `NEURALNET_MOD` module, which defines the
    `NEURALNET` derived data type/Fortran 2008 class.
    Documentation contained therein.
- - `optimizers.f90` contains `OPT\_MOD`, which defines several common
+ - `optimizers.f90` contains `OPT_MOD`, which defines several common
    first-order convex optimization algorithms.
- - `main.f90` contains a driver that tests `NEURALNET\_MOD` by training to
+ - `main.f90` contains a driver that tests `NEURALNET_MOD` by training to
    solve a linear least squares problem using both QR factorization (LAPACK)
    and a neural network with linear activations.
    The outputs should be approximately equal if the `NEURALNET` object is
@@ -48,7 +48,7 @@ The included GNU `Makefile` builds and runs the tests.
 
 ### Prerequisites
 
-`NN\_MOD` requires both `BLAS` and `LAPACK` for efficient linear algebra.
+`NN_MOD` requires both `BLAS` and `LAPACK` for efficient linear algebra.
 
 ### Building
 
